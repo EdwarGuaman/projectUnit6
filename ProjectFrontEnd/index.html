@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectFrontEnd</title>
+    <link  href="./css/styles.css" rel="stylesheet">
+
+   <!--CND BOOSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
+
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+
+</head>
+<body >
+
+   <header id="mimenu" class="container-fluid mb-2 sticky-top text-uppercase">
+      <nav   class="navbar navbar-dark bg-dark  ">
+        <div class="row">
+          <span class="navbar-brand" >
+            <img src="./img/logo.jpg" alt="" width="100" height="100" class="d-inline-block align-text-center ">
+            Empire Virtual
+          </span>
+        </div>
+
+        <div class="col d-flex justify-content-evenly">
+          <a class="nav-link rounded " style="color: aliceblue; " aria-current="page" href="#">Inicio</a>
+          <a class="nav-link rounded" style="color: aliceblue;  " href="#">Quienes Somos</a>
+          <a class="nav-link  rounded" style="color: aliceblue;  " href="#">Contactanos</a>
+
+            <!-- nav-->
+          <nav  class="navbar  navbar-dark bg-dark">
+            <div class="container-fluid">
+             
+              <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#ListaNav" >
+                <span class="navbar-toggler-icon"> </span>
+              </button>
+              <div class="offcanvas offcanvas-start bg-dark" id="ListaNav">
+                <div class="offcanvas-header " data-bs-theme="dark">
+                  <h2 class="offcanvas-title text-info" style="color: aliceblue; text-align: center;" >Empire Virtual</h2>
+                  <button class="btn-close bg-light" type="button" aria-label="Close" data-bs-dismiss="offcanvas" ></button>
+                </div>
+                
+                <ul class="navbar-nav offcanvas-body milista ">
+                  <li class="nav-item">
+                    <a onclick="mostrarPerfiles()" class="nav-link" style="color: aliceblue;" aria-current="page" href="#">Perfiles</a>
+                  </li>
+                  <li class="nav-item">
+                    <a onclick="mostrarProductos()" class="nav-link" style="color: aliceblue;" aria-current="page" href="#">Productos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a onclick="mostrarDetalles()" class="nav-link " style="color: aliceblue;" href="#">Detalles de Consultas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" style="color: aliceblue;" href="#">Investigacion</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " style="color:aliceblue;" href="#">Open Source</a>
+                  </li>
+                </ul>
+                <!---Iconos-->
+                <div class="d-flex align-self-center py-3">
+                 
+                  <a href="#"><i class="bi bi-facebook px-2 fs-3"></i> </a>
+                  <a href="#"><i class="bi bi-twitter px-2 fs-3"></i> </a>
+                  <a href="#"><i class="bi bi-github px-2 fs-3"></i> </a>
+                  <a href="#"><i class="bi bi-whatsapp px-2 fs-3"></i> </a>
+                  
+                </div>
+              </div>
+             
+  
+            </div>
+          </nav>
+
+        </div>
+         
+        
+      </nav>
+
+   </header>
+
+
+      <!--- MAIN-->
+   <main  class="container-fluid mb-3" >
+      
+        <!--section Cards-->
+         <section id ="mycards"class="container-fluid  mb-3 " >
+           
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr id="primercampo" >
+
+                <th  scope="col"></th>
+                <th  scope="col"></th>
+                <th  scope="col"></th>
+                <th  scope="col"></th>
+              </tr>
+            </thead>
+            <tbody id="mytable">
+             
+            </tbody>
+          </table>
+
+
+             <!-- <div class="card  bg-dark " style="background-image: url(./img/img1.jpg);" >
+                
+                <div class="card-body">
+                  
+                  <h5 class="card-title ">Producto</h5>
+                  
+                 <a href="#" class="btn btn-primary">Ver </a>
+                  <a href="#" class="btn btn-primary carrito"><i class="bi bi-cart4"></i></a>
+                </div>
+              </div>
+
+              <div class="card  bg-dark " style="background-image: url(./img/img2.jpg);" >
+                
+                <div class="card-body">
+                  
+                  <h5 class="card-title">Producto</h5>
+                  
+                  <a href="#" class="btn btn-primary">Ver </a>
+                  <a href="#" class="btn btn-primary carrito"><i class="bi bi-cart4"></i></a>
+                </div>
+              </div>
+
+              <div class="card  bg-dark " style="background-image: url(./img/img2.jpg);" >
+                
+                <div class="card-body">
+                  
+                  <h5 class="card-title">Producto</h5>
+                  
+                  <a href="#" class="btn btn-primary">Ver </a>
+                  <a href="#" class="btn btn-primary carrito"><i class="bi bi-cart4"></i></a>
+                </div>
+              </div>
+
+              <div class="card  bg-dark " style="background-image: url(./img/img4.jpg);" >
+                
+                <div class="card-body">
+                  
+                  <h5 class="card-title">Producto</h5>
+                  
+                  <a href="#" class="btn btn-primary">Ver </a>
+                  <a href="#" class="btn btn-primary carrito"><i class="bi bi-cart4"></i></a>
+                </div>
+              </div>
+
+              <div class="card  bg-dark " style="background-image: url(./img/img5.jpg);" >
+                
+                <div class="card-body">
+                  
+                  <h5 class="card-title">Producto</h5>
+                  
+                  <a href="#" class="btn btn-primary">Ver </a>
+                  <a href="#" class="btn btn-primary carrito"><i class="bi bi-cart4"></i></a>
+                </div>
+              </div>
+
+              <div class="card  bg-dark " style="background-image: url(./img/img6.jpg);" >
+                
+                <div class="card-body">
+                  
+                  <h5 class="card-title">Producto</h5>
+                  
+                  <a href="#" class="btn btn-primary">Ver </a>
+                  <a href="#" class="btn btn-primary carrito"><i class="bi bi-cart4"></i></a>
+                </div>
+              </div>
+
+              <div class="card  bg-dark " style="background-image: url(./img/img7.jpg);" >
+                
+                <div class="card-body">
+                  
+                  <h5 class="card-title">Producto</h5>
+                  
+                  <a href="#" class="btn btn-primary">Ver </a>
+                  <a href="#" class="btn btn-primary carrito"><i class="bi bi-cart4"></i></a>
+                </div>
+              </div>
+
+              <div class="card  bg-dark " style="background-image: url(./img/img8.png);" >
+                
+                <div class="card-body">
+                  
+                  <h5 class="card-title">Producto</h5>
+                  
+                  <a href="#" class="btn btn-primary">Ver </a>
+                  <a href="#" class="btn btn-primary carrito"><i class="bi bi-cart4"></i></a>
+                </div>
+              </div>
+
+              <div class="card  bg-dark " style="background-image: url(./img/img9.jpg);" >
+                
+                <div class="card-body">
+                  
+                  <h5 class="card-title">Producto</h5>
+                  
+                  <a href="#" class="btn btn-primary">Ver </a>
+                  <a href="#" class="btn btn-primary carrito"><i class="bi bi-cart4"></i></a>
+                </div>
+              </div>
+             
+            --> 
+
+           
+         </section>
+
+       <!--SECTION CAROUSEL-->
+         <section class="container">
+            <div class="row ">
+                  <!--Desplazamiento catalogo-->
+                <div class="col col-lg-6 micarrusel "   >
+                
+                  
+                    <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                        
+                        </div>
+
+                        <div class="carousel-inner" >
+
+                          <div class="carousel-item active ">
+                            <div class="contenedorimg">
+                              <img  src="./img/img1.jpg" class="d-block w-100" alt="...">
+                            </div>  
+                          </div>
+                          <div class="carousel-item ">
+                            <div class="img">
+                              <img  src="./img/img1.jpg" class="d-block w-100" alt="...">
+                            </div> 
+                          </div>
+                          <div class="carousel-item ">
+                            <div class="img">
+                              <img  src="./img/img4.jpg" class="d-block w-100" alt="...">
+                            </div> 
+                          </div>
+                          
+                   <!--       <div class="carousel-item">
+                            <img   src="/img/img4.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img   src="/img/img5.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img  src="/img/img6.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img  src="/img/img7.jpg" class="d-block w-100" alt="...">
+                          </div>   --> 
+                        </div>
+
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                  </div>
+                
+                </div>
+          
+          
+                  <!--Card-->
+                <div class=" col col-lg-6 ">
+          
+                  <div class="card ">
+                    <div class="card-body">
+                      <h5 class="card-title">Producto Activo</h5>
+                      <p class="card-text">Descripcion Producto</p>
+                      <p class="card-text">Precio $ <span>xxxx</span> </p>
+                      <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                  </div>
+          
+                  
+                </div>
+      
+      
+            </div>
+         </section>
+
+   </main>
+    <!--- MAIN-->
+
+
+        <!-- Footer -->
+        <footer
+                class="text-center text-lg-start text-white"
+                style="background-color: #1c2331"
+                >
+          <!-- Section: Social media -->
+          <section
+                   class="d-flex justify-content-between p-4"
+                   style="background-color: #2e8be2"
+                   >
+            <!-- Left -->
+            <div class="me-5">
+              <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+      
+            <!-- Right -->
+            <div>
+              <a href="" class="text-white me-4">
+                <i class="bi bi-facebook px-2 fs-3"></i>
+              </a>
+              <a href="" class="text-white me-4">
+                <i class="bi bi-twitter px-2 fs-3"></i>
+              </a>
+              <a href="" class="text-white me-4">
+                <i class="bi bi-github px-2 fs-3"></i>
+              </a>
+              <a href="" class="text-white me-4">
+                <i class="bi bi-whatsapp px-2 fs-3"></i>
+              </a>
+             
+            </div>
+            <!-- Right -->
+          </section>
+          <!-- Section: Social media -->
+      
+          <!-- Section: Links  -->
+          <section class="">
+            <div class="container text-center text-md-start mt-5">
+              <!-- Grid row -->
+              <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                  <!-- Content -->
+                  <h6 class="text-uppercase fw-bold">Empire Virtual</h6>
+                  <hr
+                      class="mb-4 mt-0 d-inline-block mx-auto"
+                      style="width: 60px; background-color: #7c4dff; height: 2px"
+                      />
+                  <p>
+                  Cambiando El mundo en pro de la Humanidad, avanzando por medio de tecnologia, innovacion e investigacion logrando una supervivencia y posterioridad en la inmersion tecnologica de la nueva era 
+                  </p>
+                </div>
+                <!-- Grid column -->
+      
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold">Products</h6>
+                  <hr
+                      class="mb-4 mt-0 d-inline-block mx-auto"
+                      style="width: 60px; background-color: #7c4dff; height: 2px"
+                      />
+                  <p>
+                    <a href="#!" class="text-white">Computacion Cuanica</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-white">Inteligencia Artificial</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-white">Investigacion</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-white">Innovacion </a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+      
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold">Useful links</h6>
+                  <hr
+                      class="mb-4 mt-0 d-inline-block mx-auto"
+                      style="width: 60px; background-color: #7c4dff; height: 2px"
+                      />
+                  <p>
+                    <a href="#!" class="text-white">Your Account</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-white">Become an Affiliate</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-white">Shipping Rates</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-white">Help</a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+      
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold">Contact</h6>
+                  <hr
+                      class="mb-4 mt-0 d-inline-block mx-auto"
+                      style="width: 60px; background-color: #7c4dff; height: 2px"
+                      />
+                  <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+                  <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+                  <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                  <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </div>
+          </section>
+          <!-- Section: Links  -->
+      
+          <!-- Copyright -->
+          <div
+               class="text-center p-3"
+               style="background-color: rgba(0, 0, 0, 0.2)"
+               >
+            © 2023 Copyright:
+            <a class="text-white" href="..."
+               >EmpireVirtual.com</a
+              >
+          </div>
+          <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+      
+   
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+     <!--CDN BOOSTRAP JS -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="./js/INDEX.JS"></script>
+</body>
+</html>
